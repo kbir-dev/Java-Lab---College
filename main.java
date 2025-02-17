@@ -1,21 +1,44 @@
-class student{
-    String name;
-    int rollNum;
-    int marks;
-    int age;
-    student(String name,int rollNum,int marks,int age){
-        this.name = name;
-        this.rollNum = rollNum;
-        this.marks = marks;
-        this.age = age;
-        System.out.println("Name: " + name + " Roll Number: " + rollNum + " Marks: " + marks + " Age: " + age);
+class Animal {
+    Animal() {
+        System.out.println("Animal Constructor");
+    }
+    void sound() {
+        System.out.println("Animal makes a sound");
     }
 }
+class Dog extends Animal {
+    Dog() {
+        super();
+        System.out.println("Dog Constructor");
+    }
 
-public class main{
-    public static void main(String[] args){
-        student s1 = new student("Karan",1,100,20);
-        student s2 = new student("Jatin",5,57,20);
-        student s3 = new student("Kashyap",10,63,20);
+    void sound() {
+        super.sound(); // Calls Animal's sound() method
+        System.out.println("Dog barks");
+    }
+}
+class Mammal extends Animal {
+    void type() {
+        System.out.println("Mammal is a type of animal");
+    }
+}
+class Poodle extends Mammal {
+    void sound() {
+        super.sound();
+        System.out.println("Poodle yips");
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Creating Dog object:");
+        Dog dog = new Dog();       
+        dog.sound(); 
+        System.out.println("\nCreating Poodle object:");
+       
+        Poodle poodle = new Poodle();  
+        poodle.sound(); 
+        poodle.type(); 
+         System.out.println("Karanbir Singh");
+         System.out.println("URN: 2203483");
     }
 }
